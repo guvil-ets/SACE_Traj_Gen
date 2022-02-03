@@ -25,3 +25,30 @@ G:\Shared drives\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Tr
 G:\Shared drives\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\bin\Debug\en-US\AcMr.resources.dll
 G:\Shared drives\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\bin\Debug\en-US\AcWindows.resources.dll
 G:\Shared drives\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.csproj.CopyComplete
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\SACE_Traj_Gen.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\SACE_Traj_Gen.pdb
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\accoremgd.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\acdbmgd.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\acmgd.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AdUiPalettes.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcDx.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcDxPublishUi.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AdWindows.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcMr.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcWindows.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AdUIMgd.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcTcMgd.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcCui.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\Autodesk.AutoCAD.Interop.Common.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcMNUParser.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\acdbmgd.resources.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\AcDx.resources.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\AcDxPublishUi.resources.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\AdWindows.resources.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\AcMr.resources.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\AcWindows.resources.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.csproj.AssemblyReference.cache
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.csproj.CoreCompileInputs.cache
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.csproj.CopyComplete
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.dll
+C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.pdb

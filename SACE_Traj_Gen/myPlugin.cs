@@ -355,17 +355,20 @@ namespace SACE_Traj_Gen
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 folderpath = folderBrowserDialog1.SelectedPath + "\\";
+
+                foreach (SACETraj traj in SACETrajList.SACETrajectories)
+                {
+                    traj.ExportTrajectory();
+                }
+                ed.WriteMessage("\n{0} trajectories saved to {1}", SACETrajectories.Count, folderpath);
+                SACETrajList.SACETrajectories.Clear();
+
             }
             else
             {
                 ed.WriteMessage("export canceled");
             }
-            foreach (SACETraj traj in SACETrajList.SACETrajectories)
-            {
-                traj.ExportTrajectory();
-            }
-            ed.WriteMessage("\n{0} trajectories saved to {1}", SACETrajectories.Count, folderpath);
-            SACETrajList.SACETrajectories.Clear();
+            
         }
 
         #region subs
