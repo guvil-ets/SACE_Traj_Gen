@@ -1,4 +1,4 @@
-# SACE_Traj_Gen
+# SACE_Traj_Gen v1.0
 
 An AutoCAD plugin to facilitate generation of spline control points from drawing geometry. Useful for CAM where G-Code cannot be used and spline trajectories are needed.
 
@@ -17,7 +17,7 @@ SACEDEEPENGRAVING
 Generates a spline with a defined Z depth, starting at the current machining plane
 
 SACEEXPORTTRAJECTORIES
-Saves all trajectories as .txt the clears trajectory list
+Saves all trajectories as .txt then clears trajectory list
 
 SACEDELETELASTTRAJECTORY
 Deletes last generated trajectory
