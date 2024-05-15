@@ -52,3 +52,33 @@ C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debu
 C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.csproj.CopyComplete
 C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.dll
 C:\Users\guill\Documents\Github Repostories\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.pdb
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\SACE_Traj_Gen.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\SACE_Traj_Gen.pdb
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AdUiPalettes.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcDx.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcDxPublishUi.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AdWindows.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcMr.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcWindows.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AdUIMgd.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcTcMgd.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcCui.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\Autodesk.AutoCAD.Interop.Common.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\AcMNUParser.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\fr-FR\acdbmgd.resources.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\fr-FR\AcDx.resources.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\fr-FR\AcDxPublishUi.resources.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\fr-FR\AdWindows.resources.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\fr-FR\AcMr.resources.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\fr-FR\AcWindows.resources.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.csprojAssemblyReference.cache
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.csproj.CoreCompileInputs.cache
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.csproj.CopyComplete
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\obj\Debug\SACE_Traj_Gen.pdb
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\acdbmgd.resources.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\AcDx.resources.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\AcDxPublishUi.resources.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\AdWindows.resources.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\AcMr.resources.dll
+G:\Drive partagés\Projet_SACE_GuillaumeVilleneuve\04 - Programmes\AutoCAD\SACE_Traj_Gen\SACE_Traj_Gen\bin\Debug\en-US\AcWindows.resources.dll

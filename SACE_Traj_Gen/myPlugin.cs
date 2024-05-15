@@ -104,11 +104,12 @@ namespace SACE_Traj_Gen
     {
         public static ArrayList SACETrajectories = new ArrayList();
         public static string folderpath = "";
-        public static double max_error = 0.1;
+        public static double max_error = 0.001;
         public static int traj_count = 0;
         public static double zlevel = 0.0;
         public static bool dynamic_point_density = true;
-        public static double static_seg_len = 1;
+        public static double static_seg_len = 0.5;
+        public static double min_radius = 0.1;
 
         [CommandMethod("SACEToggleDynamicDensity")]
         public static void SetDynamicDensity()
@@ -127,7 +128,7 @@ namespace SACE_Traj_Gen
             Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
             Editor ed = doc.Editor;
 
-            PromptDoubleResult maxerrorRes = ed.GetDouble("\nMaximum spline interpolation error: ");
+            PromptDoubleResult maxerrorRes = ed.GetDouble("\nInput maximum spline interpolation error: ");
             max_error = maxerrorRes.Value;
             ed.WriteMessage("Maximum spline interpolation value set to " + max_error);
         }
@@ -140,10 +141,11 @@ namespace SACE_Traj_Gen
 
             PromptDoubleResult maxerrorRes = ed.GetDouble("\nStatic mode maximum segment length: ");
             static_seg_len = maxerrorRes.Value;
-            ed.WriteMessage("Static mode maximum segment length " + static_seg_len);
+            ed.WriteMessage("Static mode maximum segment length set to " + static_seg_len);
         }
 
-        [CommandMethod("SACESetMachiningPlane")]
+
+        [CommandMethod("SACESetZPlane")]
         public static void SetMachiningPlance()
         {
             Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
@@ -156,7 +158,7 @@ namespace SACE_Traj_Gen
 
 
 
-        [CommandMethod("SACEPathEngraving")]
+        [CommandMethod("SACEPath")]
         public static void PathToTrajectory()
         // Add a trajectory from linear geometry
         {
@@ -184,7 +186,7 @@ namespace SACE_Traj_Gen
 
         }
 
-        [CommandMethod("SACEOffsetEngraving")]
+        [CommandMethod("SACEOffset")]
         public static void OffsetToTrajectory()
         // Add a trajectory from linear geometry
         {
@@ -227,31 +229,32 @@ namespace SACE_Traj_Gen
             PromptDoubleResult stepRes = ed.GetDistance("\nStep value: ");
             if (stepRes.Status != PromptStatus.OK) return;
 
-            PromptDoubleResult iniRes = ed.GetDistance("\nInitial Offset: ");
-            if (iniRes.Status != PromptStatus.OK) return;
+            PromptDoubleResult maxRes = ed.GetDistance("\nMax offset: ");
+            if (maxRes.Status != PromptStatus.OK) return;
 
             PromptPointResult resPointOff = ed.GetPoint("\nOffset side: ");
             if (resPointOff.Status != PromptStatus.OK) return;
 
             double radius = toolRadiusRes.Value;
             double step = stepRes.Value;
-            double ini = iniRes.Value;
+            double max_offset = maxRes.Value;
 
             traj_count += 1;
             int ofst_count = 1;
 
-            for (double d = radius + ini; d > radius; d -= step)
+            for (double d = radius; d <= max_offset; d += step)
             {
                 double d2;
 
-                if (d < radius)
+                if (d > max_offset-radius && d <max_offset)
                 {
-                    d2 = radius;
+                    d2 = max_offset - radius;
                 }
                 else
                 {
                     d2 = d;
                 }
+
                 if (!(OffsetCurve(pEntrs, d2, resPointOff.Value, "traj" + traj_count + "_offset" + ofst_count)))
                 {
                     return;
@@ -260,61 +263,6 @@ namespace SACE_Traj_Gen
             }
         }
 
-        [CommandMethod("SACEDeepEngraving")]
-        public static void DeepTrajectory()
-        // Add a trajectory from linear geometry
-        {
-            Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
-            Editor ed = doc.Editor;
-
-            // TODO: Select all lines and join them
-            // For now we merge manually
-
-            PromptEntityOptions peo1 = new PromptEntityOptions("\nSelect trajectory geometry : ");
-            peo1.SetRejectMessage("\nInvalid selection");
-            PromptEntityResult pEntrs = ed.GetEntity(peo1);
-            if (pEntrs.Status != PromptStatus.OK) return;
-
-            PromptDoubleResult stepRes = ed.GetDouble("\nStep value: ");
-            if (stepRes.Status != PromptStatus.OK) return;
-
-            PromptDoubleResult final_depthRes = ed.GetDouble("\nFinal Depth: ");
-            if (final_depthRes.Status != PromptStatus.OK) return;
-
-            double step = stepRes.Value;
-            double final_depth = final_depthRes.Value;
-
-            // Selected object ID
-            ObjectId lineID = pEntrs.ObjectId;
-
-            // Create and add corresponding trajectory
-            traj_count += 1;
-            int dp_count = 1;
-
-            for (double d = 0; d <= final_depth; d += step)
-            {
-                if (d <= final_depth)
-                {
-                    CurveToTraj(lineID, "traj" + traj_count + "_depth" + dp_count, d);
-                    dp_count += 1;
-                }
-                else
-                {
-                    CurveToTraj(lineID, "traj" + traj_count + "_depth" + d, final_depth);
-                    dp_count += 1;
-                }
-
-            }
-
-        }
-
-
-        //[CommandMethod("SACEHelicalDrill")]
-        public static void HelicalDrill()
-        // Add a trajectory to helical drill
-        {
-
-        }
 
         [CommandMethod("SACEDeleteLastTrajectory")]
         public static void DeleteTrajectory()
@@ -343,6 +291,15 @@ namespace SACE_Traj_Gen
             Editor ed = doc.Editor;
             SACETrajectories.Clear();
             ed.WriteMessage("\n All trajectories cleared");
+        }
+
+        [CommandMethod("SACEShowTrajectories")]
+        public static void ShowTrajectories()
+        // Remove a trajectory from the list
+        {
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Editor ed = doc.Editor;
+            ed.WriteMessage(SACETrajectories.ToString());
         }
 
         [CommandMethod("SACEExportTrajectories")]
@@ -408,6 +365,7 @@ namespace SACE_Traj_Gen
                     return false;
                 }
 
+
                 SACETraj curTraj = new SACETraj();
                 curTraj.length = GetLength(TrajLine);
 
@@ -436,11 +394,11 @@ namespace SACE_Traj_Gen
                 double curLen = 0;
                 Point3d newPt;
 
-                double point_len = SACETrajList.max_error / 10;
+                double point_len = SACETrajList.max_error / 2;
                 int point_num = (int)Math.Ceiling(curTraj.length / (point_len));
 
 
-
+                Point3d[] pt_list = new Point3d[point_num];
                 Vector3d[] d1_list = new Vector3d[point_num];
                 Vector3d[] d2_list = new Vector3d[point_num];
                 double[] dd1_list = new double[point_num];
@@ -451,22 +409,57 @@ namespace SACE_Traj_Gen
                     return false;
                 }
 
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+                ed.WriteMessage("\n\tsegment length : {0}", curTraj.length);
+
+                for (int i = 0; i < point_num; i++)
+                {
+                    pt_list[i] = TrajLine.GetPointAtDist(i * point_len);
+                };
+
                 if (dynamic_point_density)
                 {
                     for (int i = 0; i < point_num; i++)
                     {
                         try
                         {
-                            d1_list[i] = TrajLine.GetFirstDerivative(TrajLine.GetPointAtDist(i * point_len));
-                            d2_list[i] = TrajLine.GetSecondDerivative(TrajLine.GetPointAtDist(i * point_len));
-                            curv_list[i] = (d1_list[i].CrossProduct(d2_list[i]).Length) / Math.Pow(d1_list[i].Length, 3);
+                            d1_list[i] = TrajLine.GetFirstDerivative(pt_list[i]);
                         }
                         catch
                         {
                             d1_list[i] = d1_list[i - 1];
-                            d2_list[i] = d2_list[i - 1];
-                            curv_list[i] = 0;
+                            ed.WriteMessage("d1 catch");
                         }
+                    };
+
+                    for (int i = 0; i < point_num; i++)
+                    {
+                        try
+                        {
+                            d2_list[i] = TrajLine.GetSecondDerivative(pt_list[i]);
+                        }
+                        catch
+                        {
+                            d2_list[i] = d2_list[i - 1];
+                            ed.WriteMessage("d2 catch");
+                        }
+
+
+                    };
+
+
+                    for (int i = 0; i < point_num; i++)
+                    {
+                        try
+                        {
+                            curv_list[i] = (d1_list[i].CrossProduct(d2_list[i]).Length) / Math.Pow(d1_list[i].Length, 3);
+                        }
+                        catch
+                        {
+                            curv_list[i] = 0;
+                            ed.WriteMessage("curv catch");
+                        }
+
 
                     };
 
@@ -475,6 +468,7 @@ namespace SACE_Traj_Gen
                         dd1_list[i] = (d1_list[i + 1].DivideBy(d1_list[i + 1].Length) - d1_list[i - 1].DivideBy(d1_list[i - 1].Length)).Length / (2 * point_len);
                     };
                 }
+
 
                 max_seg_len = curTraj.length / Math.Ceiling(curTraj.length / static_seg_len);
 
@@ -552,6 +546,12 @@ namespace SACE_Traj_Gen
 
                 curTraj.translateZ(zlevel - depth);
 
+
+                var elapsedMs = watch.ElapsedMilliseconds;
+                ed.WriteMessage("\n\t{0} ms elasped", elapsedMs);
+                watch.Restart();
+                ed.WriteMessage("\n\t{0} points \n=====", curTraj.pointList.Count);
+
                 int result = SACETrajectories.Add(curTraj);
                 ed.WriteMessage("\nTrajectory added : " + curTraj.name);
 
@@ -559,10 +559,17 @@ namespace SACE_Traj_Gen
                 trans.Commit();
 
                 curTraj.PrintSpline();
+
+
                 return true;
+
+
+
+
             }
 
         }
+
 
         public static double GetMaxSegmentLength(Curve TrajLine, double curLen, double[] dd1_list, double[] curv_list, double point_len, double maxerror)
         {
@@ -615,10 +622,6 @@ namespace SACE_Traj_Gen
                 error = (curv_max * Math.Pow(try_len, 2) / 24); // Error bound considering maximum second derivative
                 try_len /= 2;
             }
-
-
-
-
 
 
             return max_len;
@@ -677,7 +680,6 @@ namespace SACE_Traj_Gen
                 return true;
             }
         }
-
 
         public static bool IsRightDirection(Curve pCurv, Point3d p, Vector3d vDir)
         // Detect side of point
@@ -806,7 +808,6 @@ namespace SACE_Traj_Gen
 
 
     }
-
 
 }
 
